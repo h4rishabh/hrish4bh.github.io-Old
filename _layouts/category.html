@@ -1,64 +1,40 @@
----
-layout: default
----
-{% include header.html %}
 
-{% assign page_category = site.data.category_list[page.category] %}
+<!-- Category Layout Start -->
 
-{% assign page_subcategory = site.data.subcategory_list[page.subcategory] %}
+<!DOCTYPE html>
+<html lang="{{ site.lang }}">
 
-<div class="container-full">
-  <div class="container grid-xl">
-    <div class="mt-12 show-md"></div>
-    <div class="mt-8"></div>
-    <div class="columns negative-m-xl">
-      <div class="column col-12">
-        <ul class="breadcrumb">
-          <li class="breadcrumb-item">
-            <a href="{{ site.url }}{{ site.baseurl }}">Home</a>
-          </li>
-          <li class="breadcrumb-item">
-            <a href="#">{{ page_category.name }}</a>
-          </li>
-        </ul>
-        <h2 class="text-light text-bold">{{ page_category.name }}</h2>
-        <p class="text-light mb-2">{{ page_category.description }}</p>
-      </div>
-      {% if page.has-subcategories == true %}
-        {% for subcategory in site.data.subcategory_list %}
-        {% capture subcategory_name %}{{ subcategory | first }}{% endcapture %}
-        {% assign page_subcategory = site.data.subcategory_list[subcategory_name] %}
-          {% if page_subcategory.parent-category == page.category %}
-          <div class="column col-4 col-md-6 col-sm-12">
-            <a href="{{ site.baseurl }}/{{ subcategory_name }}">
-              <div class="card card-link">
-                <div class="card-body text-center my-4">
-                  <h5 class="text-bold">{{ page_subcategory.name }}</h5>
-                      
-                  {% if subcategory[1].size == 1 %}
-                  <p class="m-0">{{ category | last | size }} article</p>
-                  {% else %}
-                  <p class="m-0">{{ category | last | size }} articles</p>
-                  {% endif %}
-                </div>
-              </div>
-            </a>
+  {% include head.html %}
+
+  <body>
+
+    {% include navigation.html %}
+
+    <section class="container content-section text-center">
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1">
+
+          {% assign category = page.title %}
+
+          <h3 id="#{{ category }}">Category: {{ category }}</h3>
+
+          <div>
+            {% for post in site.posts %}
+              {% if post.category == category %}
+                {% include post-list.html%}
+              {% endif %}
+            {% endfor %}
           </div>
-          {% endif %}
-        {% endfor %} 
-      {% else %}
-        {% for post in site.categories.[page.category] %}
-          {% include article-card.html %}
-        {% endfor %}
-      {% endif %}
 
+        </div>
+      </div>
+    </section>
 
+    {% include footer.html %}
 
+    {% include js.html %}
 
-      {% include more-help.html %}
-    </div>
-  </div>
-</div>
+  </body>
+</html>
 
-
-
+<!-- Category Layout End -->

@@ -1,63 +1,67 @@
----
-layout: default
----
 
-{% include header.html %}
+<!-- Post Layout Start -->
 
-{% assign page_category = site.data.category_list[page.category] %}
+<!DOCTYPE html>
+<html lang="{{ site.lang }}">
 
+  {% include head.html %}
 
-<div class="container-full">
-    <div class="container grid-xl">
-      <div class="mt-12 show-md"></div>
-      <div class="mt-8"></div>
-      <div class="columns negative-m-xl">
-        <div class="column col-12">
-          <ul class="breadcrumb">
-            <li class="breadcrumb-item">
-              <a href="{{ site.url }}{{ site.baseurl }}">Home</a>
-            </li>
-            <li class="breadcrumb-item">
-              <a href="../{{ page.category }}">{{ page_category.name }}</a>
-            </li>
-            <li class="breadcrumb-item">
-              <a href="#">{{ page.title }}</a>
-            </li>
-          </ul>
-          <h2 class="text-light text-bold">{{ page.title }}</h2>
-          <p class="text-light mb-0">{{ page.short-description }}</p>
-        </div>
-        <div class="column col-12">
-          <div class="card">
-            <div class="card-body">
-                {% if site.use_authors == true %}
-                {% assign post_author = site.data.authors[page.author] %}
-                <div class="flex-vertical-center mb-4">
-                  <figure class="avatar d-inline-block" style="align-items: center;">
-                    <img  src="../assets/{{ post_author.image }}" alt="...">
-                  </figure>
-                  <div class="ml-2">
-                    <p class="text-dark text-small mb-0">Written by <span class="text-primary">{{ post_author.name }}</span></p>
-                    <p class="text-dark text-small text-italic mb-0">{% include reading-time.html %}</p>
-                  </div>
-                </div>
-                {% else %}
-                <div class="ml-2">
-                    <p class="m-0 text-small">Last updated:</p>
-                    <p class="text-dark text-small text-italic mb-0">{{ page.last_modified_at | date: '%B %d, %Y'  }} - {% include reading-time.html %}</p>
-                  </div>
-                {% endif %}
+  <body>
 
-              {{ content }}
+    {% include navigation.html %}
 
-              
-            
+    <section id="post" class="container content-section text-center">
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+
+          {% include swipe-instructions.html %}
+
+          <h1><strong>{{ page.title }}</strong></h1>
+          <h4>
+            <strong>{{ page.date | date_to_string }}</strong>
+            <small>
+              . category:
+              <a class="category" href="{{site.baseurl}}/categories/{{page.category | downcase}}.html">
+                {{ page.category }}
+              </a>.
+              <a href="{{site.baseurl}}{{page.url }}#disqus_thread">Comments</a>
+              <br />
+              {% for tag in page.tags %}
+                <a class="tag" href="{{site.baseurl}}/tags/{{tag | downcase}}.html">#{{ tag }}</a>
+              {% endfor %}
+            </small>
+          </h4>
+
+          <section class="text-justify">
+            {{ page.content | markdownify }}
+          </section>
+
+          {% include share.html %}
+
+          {% if jekyll.environment == "production" %}
+            {% include comments.html %}
+          {% endif %}
 
 
-            </div>
+          <hr />
+
+          {% if site.author_blurb %}
+          <div class="author row">
+            <img class="col-xs-4 col-sm-3 col-md-2" src="{{site.baseurl}}{{site.author_blurb_image}}" alt="Me" />
+            <p class="col-xs-8 col-sm-9 col-md-10">
+              {{ site.author_blurb }}
+            </p>
           </div>
+          {% endif%}
         </div>
-        {% include more-help.html %}
       </div>
-    </div>
-  </div>
+    </section>
+
+    {% include footer.html %}
+
+    {% include js.html %}
+
+  </body>
+</html>
+
+<!-- Post Layout End -->
