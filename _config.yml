@@ -156,7 +156,7 @@ email: "hrishabh0007@gmail.com"
 # This works best when your author blurb image has a transparent background, or matches your site background color.
 
 # if the author_blurb is not set, then this feature is skipped
-author_blurb: "Hrishabbh Kumar is an awesome person. He lives in Flatland, where he works on two-dimensional engineering projects. In his spare time, John likes to eat cotton candy."
+author_blurb: "Hrishabh is an awesome person. He lives in India, where he works in an IT Company, also does some freelancing job and sometimes writes Blogs. In his spare time, Hrishabh likes to cook."
 author_blurb_image: "/img/author.png"
 
 ##################
@@ -164,12 +164,14 @@ author_blurb_image: "/img/author.png"
 ##################
 
 social:
-  - title: "facebook"
-    url: "https://facebook.com/"
+  - title: "linkedin"
+    url: "https://www.linkedin.com/in/hrishabh-kumar/"
   - title: "twitter"
-    url: "https://twitter.com/"
+    url: "https://twitter.com/hrish4bh"
   - title: "github"
-    url: "https://github.com/PanosSakkos/personal-jekyll-theme"
+    url: "https://github.com/hrish4bh"
+  - title: "facebook"
+    url: "https://facebook.com/hrishabh.bajaj1"
   #  url: "https://blockchain.info/address/1LHuKC9Em3KA5yoZaf7nngnNdf9K7s2gSi"
   #- title: "bitcoin"
   - title: "rss"
@@ -185,9 +187,9 @@ err-404-img: "/img/labtocat.png"
 # GPG on Keybase #
 ##################
 
-keybase-username: johnsmith
-keybase-in-social: True
-keybase-in-footer: True
+keybase-username: Hrishabh
+keybase-in-social: False
+keybase-in-footer: False
 
 ################################################################################
 
