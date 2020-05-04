@@ -55,8 +55,9 @@ type-speed: 10
 start-delay: 200
 delete-delay: 5000
 lines: # You can add HTML Tags in the Text
-  - text: "The lower you fall, the higher you'll fly."
-  - text: "Where’s your will to be weird?"
+  - text: "Doing something what I love 💖"
+  - text: "Be the Reason of Someone's smile Today 😊"
+  - text: "Never stop learning, The day you stopped, You are Dead!"
 
 me-img: "/img/hrishabh.png"
 
@@ -131,16 +132,22 @@ syntax-highlight: True
 ############
 
 events:
-  - image: "/img/timeline/spidertocat.png"
-    date: "September 2013 - Today"
-    description: "Saving the neighborhood!"
-  - image: "/img/timeline/baracktocat.jpg"
-    date: "September 2007 - August 2013"
-    description: "Started coding"
+  - image: "/img/timeline/tcs_logo.jpg" 
+    date: "June 2018 - Today"
+    description: "Java Developer @ <a href=\"https://en.wikipedia.org/wiki/Tata_Consultancy_Services\" target=\"_blank\">Tata Consultancy Services</a>"
+  - image: "/img/timeline/SimpleWay2Code.jpg"
+    date: "October 2017"
+    description: "Created <a href=\"https://www.simpleway2code.me/p/c-program.html\" target=\"_blank\">SimpleWay2Code </a> An online portal for Coding Preperation"
+  - image: "/img/timeline/coding.jpg"
+    date: "February 2015"
+    description: "Started coding form Scratch"
+  - image: "/img/timeline/education.jpg"
+    date: "August 2014 - May 2018"
+    description: "Joined Undergraduate program Specialized in <a href=\"https://en.wikipedia.org/wiki/Computer_Science_and_Engineering\" target=\"_blank\"> Computer Science & Engineering</a> "
 
 # First image of the Timeline
 
-timeline-img: "/img/timeline/default.png"
+timeline-img: "/img/timeline/author.png"
 
 ###########
 # Contact #
