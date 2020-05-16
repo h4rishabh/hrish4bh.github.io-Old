@@ -55,8 +55,7 @@ type-speed: 10
 start-delay: 200
 delete-delay: 5000
 lines: # You can add HTML Tags in the Text
-  - text: "Doing something what I love 💖"
-  - text: "Be the Reason of Someone's smile Today 😊"
+  - text: "Programmer, Tech Enthusiast, Explorer! "
   - text: "Never stop learning, The day you stopped, You are Dead!"
 
 me-img: "/img/hrishabh.png"
